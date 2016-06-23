@@ -1,16 +1,20 @@
 #include "mysql_make_scrambled_password_core.h"
 
 static VALUE rb_make_scrambled_password(VALUE self, VALUE v_password) {
+  char *password;
+  char *buf;
+  size_t len;
+
   Check_Type(v_password, T_STRING);
 
-  size_t len = RSTRING_LEN(v_password);
+  len = RSTRING_LEN(v_password);
 
   if (len < 1) {
     return v_password;
   }
 
-  char *password = RSTRING_PTR(v_password);
-  char *buf = alloca(CRYPT_MAX_PASSWORD_SIZE_PLUS_BUF + 1);
+  password = RSTRING_PTR(v_password);
+  buf = alloca(CRYPT_MAX_PASSWORD_SIZE_PLUS_BUF + 1);
 
   make_scrambled_password(buf, password);
 

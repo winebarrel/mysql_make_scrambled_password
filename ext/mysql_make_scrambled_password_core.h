@@ -1,6 +1,7 @@
 #ifndef __MYSQL_MAKE_SCRAMBLED_PASSWORD_CORE_H__
 #define __MYSQL_MAKE_SCRAMBLED_PASSWORD_CORE_H__
 
+#include <string.h>
 #include <alloca.h>
 #include <mysql.h>
 #include <ruby.h>
