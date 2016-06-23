@@ -2,6 +2,8 @@
 
 Execute MySQL PASSWORD() function in Ruby.
 
+[![Build Status](https://travis-ci.org/winebarrel/mysql_make_scrambled_password.svg?branch=master)](https://travis-ci.org/winebarrel/mysql_make_scrambled_password)
+
 ## Installation
 
 Add this line to your application's Gemfile:
