@@ -26,6 +26,11 @@ Or install it yourself as:
 require "mysql_make_scrambled_password"
 include MysqlMakeScrambledPassword
 
+# PASSWORD()
 make_scrambled_password("FOOBARZOO")
 #=> "*70B45D8E18771E93E011F30DB91E80D6306EA4C3"
+
+# OLD_PASSWORD()
+make_scrambled_password_323("FOOBARZOO")
+#=> "6e35068701b1cc8b"
 ```

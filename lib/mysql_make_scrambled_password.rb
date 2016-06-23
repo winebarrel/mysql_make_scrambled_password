@@ -6,4 +6,9 @@ module MysqlMakeScrambledPassword
     MysqlMakeScrambledPassword::Core.make_scrambled_password(password)
   end
   module_function :make_scrambled_password
+
+  def make_scrambled_password_323(password)
+    MysqlMakeScrambledPassword::Core.make_scrambled_password_323(password)
+  end
+  module_function :make_scrambled_password_323
 end
