@@ -21,6 +21,7 @@ static VALUE rb_make_scrambled_password(VALUE self, VALUE v_password) {
   return rb_str_new2(buf);
 }
 
+#ifdef HAVE_MAKE_SCRAMBLED_PASSWORD_323
 static VALUE rb_make_scrambled_password_323(VALUE self, VALUE v_password) {
   char *password;
   char *buf;
@@ -41,10 +42,14 @@ static VALUE rb_make_scrambled_password_323(VALUE self, VALUE v_password) {
 
   return rb_str_new2(buf);
 }
+#endif /* HAVE_MAKE_SCRAMBLED_PASSWORD_323 */
 
 void Init_mysql_make_scrambled_password_core() {
   VALUE rb_mMysqlMakeScrambledPassword = rb_define_module("MysqlMakeScrambledPassword");
   VALUE rb_mMysqlMakeScrambledPasswordCore = rb_define_module_under(rb_mMysqlMakeScrambledPassword, "Core");
   rb_define_module_function(rb_mMysqlMakeScrambledPasswordCore, "make_scrambled_password", rb_make_scrambled_password, 1);
+
+#ifdef HAVE_MAKE_SCRAMBLED_PASSWORD_323
   rb_define_module_function(rb_mMysqlMakeScrambledPasswordCore, "make_scrambled_password_323", rb_make_scrambled_password_323, 1);
+#endif /* HAVE_MAKE_SCRAMBLED_PASSWORD_323 */
 }

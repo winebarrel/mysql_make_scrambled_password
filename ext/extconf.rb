@@ -19,4 +19,6 @@ else
   have_library('mysqlclient')
 end
 
+have_func('make_scrambled_password_323')
+
 create_makefile('ext/mysql_make_scrambled_password_core')
